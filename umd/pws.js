@@ -204,7 +204,7 @@ function pws(url, protocols, WebSocket, options) {
     if (reconnecting)
       return reconnectDelay - (Date.now() - reconnecting)
 
-    if (pws.maxRetries && pws.connects >= pws.maxRetries)
+    if (pws.maxRetries && pws.retries >= pws.maxRetries)
       return
 
     reconnecting = Date.now()
